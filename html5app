@@ -7,7 +7,7 @@ if [ "x$APP" = "x" ]; then
 fi
 
 if [ -f "$APP" ];then
-    chromium-browser --app=$1
+    chromium-browser --app=file://$1
 else
     zenity --error --text="The application '$APP' can't be found"
     exit
