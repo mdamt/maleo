@@ -1,0 +1,15 @@
+#!/bin/bash
+
+APP=$1
+if [ "x$APP" = "x" ]; then
+    zenity --error --text="HTML5 application runner. No application to run."
+    exit
+fi
+
+if [ -f "$APP" ];then
+    chromium-browser --app=$1
+else
+    zenity --error --text="The application '$APP' can't be found"
+    exit
+fi
+

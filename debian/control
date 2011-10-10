@@ -1,0 +1,14 @@
+Source: html5app
+Section: gnome
+Priority: optional
+Maintainer: BlankOn Developers <BlankOn-Dev@googlegroups.com>
+Standards-Version: 3.9.1
+Build-Depends: cdbs, debhelper (>= 7.3.5)
+
+
+Package: html5app
+Architecture: all
+Depends: chromium-browser, zenity 
+Description: HTML5 application runner 
+ This package provides HTML5 application runner.
+
