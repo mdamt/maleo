@@ -27,13 +27,14 @@ GTK_REQUIRED=3.0.8
 ATK_REQUIRED=2.0.0
 SEED_REQUIRED=3.2.0
 WEBKIT_REQUIRED=1.3.0
+LIBXML_REQUIRED=2.9.1
 
-PKG_CHECK_MODULES(HTML5APP, glib-2.0 >= $GLIB_REQUIRED gtk+-3.0 >= $GTK_REQUIRED webkitgtk-3.0 >= $WEBKIT_REQUIRED seed >= $SEED_REQUIRED)
+PKG_CHECK_MODULES(HTML5APP, glib-2.0 >= $GLIB_REQUIRED gtk+-3.0 >= $GTK_REQUIRED webkitgtk-3.0 >= $WEBKIT_REQUIRED seed >= $SEED_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED)
 
 AC_SUBST(HTML5APP_CFLAGS)
 AC_SUBST(HTML5APP_LIBS)
 
-VALA_PACKAGES="--pkg gdk-x11-3.0 --pkg gtk+-3.0 --pkg webkitgtk-3.0 --pkg seed --pkg javascriptcore"
+VALA_PACKAGES="--pkg gdk-x11-3.0 --pkg gtk+-3.0 --pkg webkitgtk-3.0 --pkg seed --pkg javascriptcore --pkg libxml-2.0"
 
 AC_SUBST(VALA_PACKAGES)
 

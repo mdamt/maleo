@@ -11,6 +11,7 @@ bin_PROGRAMS = html5app
 
 html5app_SOURCES = webview.vala \
 		window.vala \
+		config.vala \
     main.vala \
 	$(NULL)
 
