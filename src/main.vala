@@ -7,7 +7,7 @@ int main (string[] args) {
 
     Gtk.init (ref args);
 
-    var w = new Window ();
+    var w = new AppWindow ();
     w.show_all();
 
     Gtk.main ();

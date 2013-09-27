@@ -1,6 +1,11 @@
 using Gtk;
 
-public class Window: Window {
-  var w = new WebView ();
-  add(w);
+public class AppWindow: Window {
+
+  public AppWindow () {
+    var w = new WebView ();
+    w.show();
+    add(w);
+    show_all();
+  }
 }

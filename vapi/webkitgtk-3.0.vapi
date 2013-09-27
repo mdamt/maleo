@@ -4209,6 +4209,7 @@ namespace WebKit {
 		public unowned string get_uri ();
 		public Gtk.PolicyType get_vertical_scrollbar_policy ();
 		public unowned WebKit.WebView get_web_view ();
+    public unowned JSCore.GlobalContext get_global_context ();
 		public void load_alternate_string (string content, string base_url, string unreachable_url);
 		public void load_request (WebKit.NetworkRequest request);
 		public void load_string (string content, string mime_type, string encoding, string base_uri);
@@ -4511,7 +4512,7 @@ namespace WebKit {
 		public void set_view_mode (WebKit.WebViewViewMode mode);
 		public void set_view_source_mode (bool view_source_mode);
 		public void set_zoom_level (float zoom_level);
-    //public unowned JSCore.GlobalContext  get_javascript_global_context ();
+    public unowned JSCore.GlobalContext  get_javascript_global_context ();
 		[NoWrapper]
 		public virtual bool should_allow_editing_action ();
 		public void stop_loading ();
