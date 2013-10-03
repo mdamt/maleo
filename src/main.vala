@@ -10,7 +10,7 @@ int main (string[] args) {
     if (args.length > 1) {
       var c = new ConfigXML (args[1]);
 
-      var w = new AppWindow (c.directory + "/" + c.content);
+      var w = new AppWindow (c);
       if (c.width != -1) {
         w.default_width = c.width;
       }
