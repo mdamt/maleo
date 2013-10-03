@@ -2,11 +2,14 @@ using Gtk;
 
 public class AppWindow: Window {
   ConfigXML config = null;
+  ScrolledWindow scrolledWindow = null;
 
   public AppWindow (ConfigXML config) {
+    scrolledWindow = new ScrolledWindow (null, null);
     this.config = config;
     var w = new WebView ();
-    add(w);
+    add(scrolledWindow);
+    scrolledWindow.add(w);
     w.load_uri ("file://" + config.directory + "/" + config.content);
     var f = w.window_features;
     if (config.width != -1) {
