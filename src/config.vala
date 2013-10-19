@@ -10,30 +10,38 @@ public class ConfigXML {
   Xml.Doc* doc = null;
   Xml.XPath.Object* obj = null;
   Context ctx = null;
+
+  /* Holds the entry point of the application */ 
   public string content {
     get;
     private set;
     default = null;
   }
 
+  /* Holds the directory of the application
+  where the runtime needs to look into */
   public string directory {
     get;
     private set;
     default = null;
   }
 
+  /* Holds the application title
+     shown as the application window title */
   public string title {
     get;
     private set;
     default = null;
   }
 
+  /* Holds the recommended application window's height*/
   public int height {
     get;
     private set;
     default = -1;
   }
 
+  /* Holds the recommended application window's width */
   public int width {
     get;
     private set;
