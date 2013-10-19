@@ -55,6 +55,13 @@ public class ConfigXML {
     default = true;
   }
 
+  /* NodeJS app which needs to be run, if specified */ 
+  public string? nodejs_app {
+    get;
+    private set;
+    default = null;
+  }
+
   public ConfigXML(string path) {
     Parser.init ();
     doc = Parser.parse_file (path + "/config.xml");
@@ -91,6 +98,9 @@ public class ConfigXML {
     if (w == "false") {
       enable_seed = false;
     }
+
+    nodejs_app = get_string_from_preference("nodejs-app");
+
     cleanup ();
   }
 
