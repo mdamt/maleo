@@ -7,7 +7,7 @@ public class AppWindow: Window {
   public AppWindow (ConfigXML config) {
     scrolledWindow = new ScrolledWindow (null, null);
     this.config = config;
-    var w = new WebView ();
+    var w = new WebView (config);
     add(scrolledWindow);
     scrolledWindow.add(w);
     w.load_uri ("file://" + config.directory + "/" + config.content);

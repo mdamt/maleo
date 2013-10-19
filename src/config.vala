@@ -48,6 +48,13 @@ public class ConfigXML {
     default = -1;
   }
 
+  /* Holds value whether runtime needs to load seed */
+  public bool enable_seed {
+    get;
+    private set;
+    default = true;
+  }
+
   public ConfigXML(string path) {
     Parser.init ();
     doc = Parser.parse_file (path + "/config.xml");
@@ -80,6 +87,10 @@ public class ConfigXML {
       height = int.parse(w);
     }
 
+    w = get_string_from_preference("enable-seed");
+    if (w == "false") {
+      enable_seed = false;
+    }
     cleanup ();
   }
 
@@ -125,6 +136,38 @@ public class ConfigXML {
     return return_value;
   }
 
+  string? get_string_from_preference(string name) {
+    string return_value = null;
+    obj = ctx.eval_expression ("/x:widget/x:preference");
+    if (obj == null || obj->nodesetval == null) {
+      cleanup();
+      return return_value;
+    }
+      
+    for (int i = 0; i < obj->nodesetval->length (); i++) {
+      Xml.Node* node = obj->nodesetval->item (i);
+      Xml.Attr* attr = null;
+      attr = node->properties;
+
+      var pickupNow = false;
+      while ( attr != null )
+      {
+        if (attr->name == "name") {
+          pickupNow = false;
+          if (attr->children->content == name) {
+            pickupNow = true;
+          }
+        }
+        if (attr->name == "value" && pickupNow) {
+          return_value = attr->children->content + ""; //copy
+          break;
+        }
+        attr = attr->next;
+      }
+    }
+
+    return return_value;
+  }
 
   void cleanup () {
     // libxml-2.0 binding requires us to do the cleanup manually
