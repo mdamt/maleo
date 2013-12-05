@@ -1,28 +1,28 @@
 NULL = 
 
 AM_CPPFLAGS = \
-	$(HTML5APP_CFLAGS) \
+	$(maleo_CFLAGS) \
 	-include config.h \
 	-DLOCALEDIR=\""$(localedir)"\" \
 	-DPKGDATADIR=\""$(pkgdatadir)"\" \
 	$(NULL)
 
-bin_PROGRAMS = html5app
+bin_PROGRAMS = maleo
 
-html5app_SOURCES = webview.vala \
+maleo_SOURCES = webview.vala \
 		window.vala \
 		config.vala \
     main.vala \
 	$(NULL)
 
-html5app_VALAFLAGS = \
+maleo_VALAFLAGS = \
     --vapidir ../vapi \
 	--pkg config \
     $(VALA_PACKAGES) \
     $(NULL)
 
-html5app_LDADD = \
-	$(HTML5APP_LIBS) \
+maleo_LDADD = \
+	$(maleo_LIBS) \
 	$(NULL)
 
 EXTRA_DIST = \
@@ -31,4 +31,7 @@ EXTRA_DIST = \
 DISTCLEANFILES = \
 	$(NULL)
 
+install-exec-hook:
+	$(LN_S) $(DESTDIR)$(bindir)/maleo$(EXEEXT) \ 
+		$(DESTDIR)$(bindir)/html5app$(EXEEXT)
 
