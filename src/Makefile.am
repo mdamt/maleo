@@ -33,5 +33,5 @@ DISTCLEANFILES = \
 
 install-exec-hook:
 	$(LN_S) $(DESTDIR)$(bindir)/maleo$(EXEEXT) \ 
-		$(DESTDIR)$(bindir)/html5app$(EXEEXT)
+		$(DESTDIR)$(bindir)/maleo$(EXEEXT)
 
