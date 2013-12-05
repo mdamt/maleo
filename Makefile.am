@@ -6,8 +6,8 @@ SUBDIRS = \
 	src \
 	$(NULL)
 
-html5appdocdir = ${prefix}/doc/html5app
-html5appdoc_DATA = \
+maleodocdir = ${prefix}/doc/maleo
+maleodoc_DATA = \
 	ChangeLog \
 	README \
 	COPYING \
@@ -17,7 +17,7 @@ html5appdoc_DATA = \
 	$(NULL)
 
 EXTRA_DIST = \
-	$(html5appdoc_DATA) \
+	$(maleodoc_DATA) \
 	intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in\
