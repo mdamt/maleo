@@ -4,6 +4,6 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="html5app"
+PKG_NAME="maleo"
 
 . gnome-autogen.sh
