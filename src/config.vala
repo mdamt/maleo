@@ -31,7 +31,7 @@ public class ConfigXML {
   public string title {
     get;
     private set;
-    default = null;
+    default = "";
   }
 
   /* Holds the recommended application window's height*/
