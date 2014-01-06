@@ -9,10 +9,14 @@ AM_CPPFLAGS = \
 
 bin_PROGRAMS = maleo
 
-maleo_SOURCES = webview.vala \
+maleo_SOURCES = \
+		webview.vala \
 		window.vala \
 		config.vala \
     main.vala \
+		help.vala \
+		utils.vala \
+		run.vala \
 	$(NULL)
 
 maleo_VALAFLAGS = \
