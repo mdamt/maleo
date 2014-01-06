@@ -15,6 +15,7 @@ private class Run : Command {
   }
 
   public override string help {
+    // todo: print help for using `run`; it also shows available options for running `run` command
     get { return "help run"; }
   }
 
@@ -106,6 +107,7 @@ private class Run : Command {
 
     w.show_all();
     
+    // kill nodejs process and quit the app
     w.destroy.connect(() => {
       if (nodejs_pid > 0) {
         Process.close_pid(nodejs_pid);

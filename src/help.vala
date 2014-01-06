@@ -2,6 +2,7 @@ using Gee;
 using GLib;
 
 private class Help : Command {
+
   public override  string name {
     get { return "help";}
   }
@@ -19,6 +20,7 @@ private class Help : Command {
   }
 
   public override int run (string[] args) {
+
     if (args.length == 0) {
       Utils.print_line ("Usage: \n  maleo [COMMAND] [PARAM...] \n\nAvailable commands:\n");
       MapIterator<string, Command> iter = this.maleo.commands.map_iterator ();
@@ -29,6 +31,8 @@ private class Help : Command {
       Utils.unindent ();
     }
     else {
+      
+      // give response to $ maleo help [command]
       Command cmd = this.maleo.commands.get (args[0]);
       if (cmd == null) {
         Utils.print_line ("Unrecognised command '%s'.", args[0]);
