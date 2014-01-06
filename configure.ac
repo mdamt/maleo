@@ -28,14 +28,15 @@ ATK_REQUIRED=2.0.0
 SEED_REQUIRED=3.2.0
 WEBKIT_REQUIRED=1.3.0
 LIBXML_REQUIRED=2.9.1
+GEE_REQUIRED=0.6.7
 
-PKG_CHECK_MODULES(maleo, glib-2.0 >= $GLIB_REQUIRED gtk+-3.0 >= $GTK_REQUIRED webkitgtk-3.0 >= $WEBKIT_REQUIRED seed >= $SEED_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED)
+PKG_CHECK_MODULES(maleo, glib-2.0 >= $GLIB_REQUIRED gtk+-3.0 >= $GTK_REQUIRED webkitgtk-3.0 >= $WEBKIT_REQUIRED seed >= $SEED_REQUIRED libxml-2.0 >= $LIBXML_REQUIRED gee-1.0 >= $GEE_REQUIRED)
 
 AC_SUBST(maleo_CFLAGS)
 AC_SUBST(maleo_LIBS)
 AC_PROG_LN_S
 
-VALA_PACKAGES="--pkg gdk-x11-3.0 --pkg gtk+-3.0 --pkg webkitgtk-3.0 --pkg seed --pkg javascriptcore --pkg libxml-2.0"
+VALA_PACKAGES="--pkg gdk-x11-3.0 --pkg gtk+-3.0 --pkg webkitgtk-3.0 --pkg seed --pkg javascriptcore --pkg libxml-2.0 --pkg gee-1.0"
 
 AC_SUBST(VALA_PACKAGES)
 
